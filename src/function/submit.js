@@ -14,9 +14,9 @@ export const submit = () => {
     nampung.push(input.value);
     
     list.innerHTML += `
-    <div class="penampung flex justify-between >
+    <div class="penampung flex justify-between p-2 >
         <div class="flex ">
-            <input type="checkbox" class="checkbox"></input>
+            <input type="checkbox" class="checkbox flex items-center"></input>
             <p class="flex items-center">${index}</p1>
             <p class="flex items-center">${input.value}</p>
             <p class="flex items-center">${date.value}</p>
@@ -31,6 +31,4 @@ export const submit = () => {
 
     hapus();
     ubah();
-    
-
 }

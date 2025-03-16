@@ -1,9 +1,9 @@
 const ubah = () => {
-    const editButtons = document.getElementsByClassName('ubah');
+    const edit = document.getElementsByClassName('ubah');
     
-    for (let i = 0; i < editButtons.length; i++) {
-        editButtons[i].addEventListener('click', () => {
-            const parent = editButtons[i].closest('.penampung'); // Ambil elemen utama
+    for (let i = 0; i < edit.length; i++) {
+        edit[i].addEventListener('click', () => {
+            const parent = edit[i].closest('.penampung'); 
             const text = parent.querySelector('p:nth-child(3)');
             const date = parent.querySelector('p:nth-child(4)');
             
