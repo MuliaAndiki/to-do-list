@@ -1,8 +1,13 @@
 import { useState } from 'react';
+
+
 const App = () => {
-  const headText = 'Tugas to-do-list';
+  
+  const headText = 'To-Do-List';
   const tombol = 'Submit';
   const holder = 'Masukkan tugasmu disini';
+  const tedit = "Edit";
+  const thapus = "Hapus";
 
   const [todos, setTodos] = useState([]);
   const [value, setValue] = useState('');
@@ -26,13 +31,14 @@ const handelEdit = (index) => {
   !edit ? setEditIndex(index) : setEditIndex(null);
 }
   return (
+    <>
       <header className="">
           <div id=""className="">
-              <h1 id="" className="text-center">{headText}</h1>
+              <h1 id="" className="text-center font-[jersey]">{headText}</h1>
               <div id="column"className="flex gap-[3rem] py-[3rem] pl-[1rem] items-center">
-                <input id="input" value={value} onChange={(e) => setValue(e.target.value)} type="text" placeholder={holder} className="border-2 rounded-md h-[3rem]"></input>
-                <input id="date" value={date} onChange={(e) => setDate(e.target.value)} type="date" className="border-2 rounded-md h-[3rem]"></input>
-                  <button onClick={() => handleSubmit()} id="button"className="border-2 rounded-md h-[4rem]">
+                <input id="input" value={value} onChange={(e) => setValue(e.target.value)} type="text" placeholder={holder} className="border-2 rounded-md h-[3rem] hover:shadow-lg hover:shadow-cyan-500/50 duration-[1s]"></input>
+                <input id="date" value={date} onChange={(e) => setDate(e.target.value)} type="date" className="border-2 rounded-md h-[3rem] hover:shadow-lg hover:shadow-cyan-500/50 duration-[1s]"></input>
+                  <button onClick={() => handleSubmit()} id="button"className="hover:shadow-lg hover:shadow-cyan-500/50 duration-[1s]">
                       {tombol}
                   </button>
               </div>
@@ -51,12 +57,12 @@ const handelEdit = (index) => {
                                 const newArr = [...prev];
                                 newArr[index].value = e.target.value;
                                 return newArr;
-                              })} type="text" placeholder={holder} className="border-2 border-gray-600 rounded-md h-[2rem]"></input>
+                              })} type="text" placeholder={holder} className="border-2 border-gray-600 rounded-md h-[2rem] hover:shadow-lg hover:shadow-cyan-500/50 duration-[1s]"></input>
                               <input id="date" value={data.date} onChange={(e) => setTodos(prev => {
                                 const newArr = [...prev];
                                 newArr[index].date = e.target.value;
                                 return newArr;
-                              })} type="date" className="border-2 border-gray-600 rounded-md h-[2rem]"></input>
+                              })} type="date" className="border-2 border-gray-600 rounded-md h-[2rem] hover:shadow-lg hover:shadow-cyan-500/50 duration-[1s]"></input>
                               </>
                             ) : (
                               <>
@@ -64,17 +70,18 @@ const handelEdit = (index) => {
                             <p className="flex items-center">{data.date}</p>
                               </>
                             )}
-                            <button onClick={() => handelEdit(index)} className="ubah">edit</button>
-                            <button className='ubah' onClick={() => setTodos(prev => {
+                            <button onClick={() => handelEdit(index)} className="ubah hover:shadow-lg hover:shadow-cyan-500/50 duration-[1s]s">{tedit}</button>
+                            <button className='ubah hover:shadow-lg hover:shadow-cyan-500/50 duration-[1s]' onClick={() => setTodos(prev => {
                               const newArr = [...prev.filter((_, i) => i !== index)];
                               return newArr;
-                            })}>hapus</button>
+                            })}>{thapus}</button>
                         </div>
                      </div>
                   )
                  })} 
           </div>
       </header>  
+    </>
   );
 };
 
