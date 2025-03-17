@@ -29,10 +29,10 @@ const handelEdit = (index) => {
       <header className="">
           <div id=""className="">
               <h1 id="" className="text-center">{headText}</h1>
-              <div id="column"className="flex gap-[4rem] py-[3rem] pl-[2rem]">
-                <input id="input" value={value} onChange={(e) => setValue(e.target.value)} type="text" placeholder={holder} className="border-2 border-gray-600 rounded-md"></input>
-                <input id="date" value={date} onChange={(e) => setDate(e.target.value)} type="date" className="border-2 rounded-md"></input>
-                  <button onClick={() => handleSubmit()} id="button"className="border-2 rounded-md">
+              <div id="column"className="flex gap-[3rem] py-[3rem] pl-[1rem] items-center">
+                <input id="input" value={value} onChange={(e) => setValue(e.target.value)} type="text" placeholder={holder} className="border-2 rounded-md h-[3rem]"></input>
+                <input id="date" value={date} onChange={(e) => setDate(e.target.value)} type="date" className="border-2 rounded-md h-[3rem]"></input>
+                  <button onClick={() => handleSubmit()} id="button"className="border-2 rounded-md h-[4rem]">
                       {tombol}
                   </button>
               </div>
@@ -41,9 +41,9 @@ const handelEdit = (index) => {
           <div id="list" className="">
                  {todos.map((data, index) => {
                   return (
-                    <div className=" flex justify-between p-2">
-                        <div className="flex">
-                            <input type="checkbox" className="w-full penampung checkbox flex items-center"></input>
+                    <div className="[flex]">
+                        <div className="flex justify-between items-center px-[1rem] py-[1rem] border-2 rounded-md">
+                            <input type="checkbox" className=" penampung checkbox flex items-center"></input>
                             <p className="flex items-center">{index + 1}</p>
                             {edit && editIndex === index ? (
                               <>
@@ -51,12 +51,12 @@ const handelEdit = (index) => {
                                 const newArr = [...prev];
                                 newArr[index].value = e.target.value;
                                 return newArr;
-                              })} type="text" placeholder={holder} className="border-2 border-gray-600 rounded-md"></input>
+                              })} type="text" placeholder={holder} className="border-2 border-gray-600 rounded-md h-[2rem]"></input>
                               <input id="date" value={data.date} onChange={(e) => setTodos(prev => {
                                 const newArr = [...prev];
                                 newArr[index].date = e.target.value;
                                 return newArr;
-                              })} type="date" className="border-2 rounded-md"></input>
+                              })} type="date" className="border-2 border-gray-600 rounded-md h-[2rem]"></input>
                               </>
                             ) : (
                               <>
