@@ -1,5 +1,5 @@
-import { useState } from 'react';
-
+import { useState, useEffect } from 'react';
+import Splash from './component/Splash';
 
 const App = () => {
   
@@ -9,6 +9,8 @@ const App = () => {
   const tedit = "Edit";
   const thapus = "Hapus";
 
+  const [splash, setSplash] = useState(true);
+  const [isBlur, setIsBlur] = useState(false);
   const [todos, setTodos] = useState([]);
   const [value, setValue] = useState('');
   const [date, setDate] = useState('');
@@ -26,12 +28,21 @@ const handleSubmit = () => {
   })
 }
 
+
 const handelEdit = (index) => {
   setEdit(!edit);
   !edit ? setEditIndex(index) : setEditIndex(null);
 
 }
-  return (
+
+useEffect (() => {
+ setTimeout(()=>setSplash(false), 5300)
+ setTimeout(()=>setIsBlur(true), 5000)
+},[])
+
+  return splash ? (
+    <Splash isBlur={isBlur}/>
+  ):(
     <>
       <header className="">
           <div id=""className="">
@@ -83,7 +94,8 @@ const handelEdit = (index) => {
           </div>
       </header>  
     </>
-  );
+  )
+  
 };
 
 export default App;
