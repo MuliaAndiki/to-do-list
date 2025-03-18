@@ -5,18 +5,18 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo-List</title>
-  
-
+    <link rel="stylesheet" href="/src/index.css">
   </head>
   <body>
-    <div id="screen" class="w-screen h-screen">
-      <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-[-1]">
-        <source src="/public/assets/background.mp4" type="video/mp4">
-      </video> 
-    <div class="justify-center items-center flex h-screen w-screen">
-      <div id="root" class="border-2 rounded-md w-[40rem] p-8 z-[10]"></div>
-        <script type="module" src="/src/main.jsx"></script>
-      </div>
+    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-[-1]">
+      <source src="/public/assets/background.mp4" type="video/mp4">
+    </video>
+    <div id="splas" class="fixed inset-0 flex items-center justify-center bg-black">
+      <img src="/public/assets/Splash1.gif" class="w-full h-full object-cover" alt="splas screen">
     </div>
+      <div id="root" class="border-2 rounded-md w-[40rem] p-8 shadow-lg shadow-cyan-500/50 ring-2  "></div>
+
+      <script src="/src/function/SplashScreen.js"></script>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

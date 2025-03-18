@@ -29,6 +29,7 @@ const handleSubmit = () => {
 const handelEdit = (index) => {
   setEdit(!edit);
   !edit ? setEditIndex(index) : setEditIndex(null);
+
 }
   return (
     <>
@@ -39,7 +40,7 @@ const handelEdit = (index) => {
                 <input id="input" value={value} onChange={(e) => setValue(e.target.value)} type="text" placeholder={holder} className="border-2 rounded-md h-[3rem] hover:shadow-lg hover:shadow-cyan-500/50 duration-[1s]"></input>
                 <input id="date" value={date} onChange={(e) => setDate(e.target.value)} type="date" className="border-2 rounded-md h-[3rem] hover:shadow-lg hover:shadow-cyan-500/50 duration-[1s]"></input>
                   <button onClick={() => handleSubmit()} id="button"className="hover:shadow-lg hover:shadow-cyan-500/50 duration-[1s]">
-                      {tombol}
+                      {tombol} 
                   </button>
               </div>
            </div>
