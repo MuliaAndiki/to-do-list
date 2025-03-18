@@ -4,4 +4,4 @@ setTimeout (() => {
 
 setTimeout (() => {
     document.getElementById('splas').style.display = 'none';
-}, 5350);
+}, 5500);
